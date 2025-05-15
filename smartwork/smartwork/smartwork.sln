@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "smartwork", "smartwork.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "smartwork.Core", "..\smartwork.Core\smartwork.Core.csproj", "{AA8A4D80-0859-42AC-91E8-F2DC94399F91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "smartwork.Data", "..\smartwork.Data\smartwork.Data.csproj", "{0E84093D-BA8C-4E27-9E88-3E9FD7C4675B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +25,10 @@ Global
 		{AA8A4D80-0859-42AC-91E8-F2DC94399F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA8A4D80-0859-42AC-91E8-F2DC94399F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA8A4D80-0859-42AC-91E8-F2DC94399F91}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B338EABF-1076-4A45-8029-EF198E123400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B338EABF-1076-4A45-8029-EF198E123400}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B338EABF-1076-4A45-8029-EF198E123400}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B338EABF-1076-4A45-8029-EF198E123400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E84093D-BA8C-4E27-9E88-3E9FD7C4675B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E84093D-BA8C-4E27-9E88-3E9FD7C4675B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E84093D-BA8C-4E27-9E88-3E9FD7C4675B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E84093D-BA8C-4E27-9E88-3E9FD7C4675B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
