@@ -25,10 +25,13 @@
                     <Label Text="VOR ORT" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" />
 
                     <Label Text="von:" />
-                    <TimePicker Time="{Binding FromTime}" />
+                    <TimePicker Time="{Binding FromTime}" Format="HH:mm"  />
 
                     <Label Text="bis:" />
-                    <TimePicker Time="{Binding ToTime}" />
+                    <TimePicker Time="{Binding ToTime}" Format="HH:mm"  />
+
+
+
 
                     <Label Text="Pause in Min:" />
                     <Entry Text="{Binding BreakMinutes}" Placeholder="z. B. 30" />

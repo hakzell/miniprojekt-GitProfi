@@ -7,5 +7,6 @@ using System.Threading.Tasks;
 namespace smartwork.Core.ViewModels;
 
 public class ExportViewModel
+
 {
 }
