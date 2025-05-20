@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using smartwork.Core.ViewModels;
 using smartwork.Pages;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace smartwork
 {
@@ -10,6 +11,8 @@ namespace smartwork
         {
             var builder = MauiApp.CreateBuilder();
             builder
+                   .UseMauiApp<App>()
+                   .ConfigureSyncfusionCore()
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
                 {
