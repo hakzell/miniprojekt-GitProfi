@@ -2,6 +2,7 @@
 using smartwork.Core.ViewModels;
 using smartwork.Pages;
 using Syncfusion.Maui.Core.Hosting;
+using CommunityToolkit;
 
 namespace smartwork
 {
@@ -22,8 +23,11 @@ namespace smartwork
 
             builder.Services.AddSingleton<ExportPage>();
             builder.Services.AddSingleton<ExportViewModel>();
+
             builder.Services.AddSingleton<ManualPage>();
             builder.Services.AddSingleton<ManualViewModel>();
+
+            builder.Services.AddSingleton<MainViewModel>();
 
 #if DEBUG
             builder.Logging.AddDebug();
