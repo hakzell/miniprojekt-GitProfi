@@ -22,6 +22,8 @@ namespace smartwork
 
             builder.Services.AddSingleton<ExportPage>();
             builder.Services.AddSingleton<ExportViewModel>();
+            builder.Services.AddSingleton<ManualPage>();
+            builder.Services.AddSingleton<ManualViewModel>();
 
 #if DEBUG
             builder.Logging.AddDebug();
