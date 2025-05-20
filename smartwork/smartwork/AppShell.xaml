@@ -4,12 +4,23 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:smartwork"
+    xmlns:pages="clr-namespace:smartwork.Pages"
     Shell.FlyoutBehavior="Disabled"
     Title="smartwork">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <Tab Title="Home">
+            <ShellContent
+            
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+        </Tab>
+
+        <Tab Title="Export">
+            <ShellContent
+                ContentTemplate="{DataTemplate pages:ExportPage}"
+                Route="ExportPage" />
+        </Tab>
+    </TabBar>
 
 </Shell>
