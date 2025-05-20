@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using smartwork.Core.ViewModels;
+using smartwork.Pages;
 
 namespace smartwork
 {
@@ -15,8 +17,11 @@ namespace smartwork
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddSingleton<ExportPage>();
+            builder.Services.AddSingleton<ExportViewModel>();
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
