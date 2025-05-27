@@ -1,11 +1,14 @@
-﻿namespace smartwork
+﻿using smartwork.Core.ViewModels;
+
+namespace smartwork
 {
     public partial class MainPage : ContentPage
     {
 
-        public MainPage()
+        public MainPage(MainViewModel mainViewModel)
         {
             InitializeComponent();
+            this.BindingContext = mainViewModel;
         }
 
         
