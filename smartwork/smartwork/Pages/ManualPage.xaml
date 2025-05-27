@@ -5,79 +5,64 @@
              Title="Manuelle Zeiteingabe">
 
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="20">
+        <VerticalStackLayout Padding="30" Spacing="30"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center">
 
             <!-- Titel -->
-            <Label Text="Manuelle Zeiteingabe"
-                   FontSize="24"
+            <Label Text="Zeiteingabe"
+                   FontSize="28"
+                   FontAttributes="Bold"
                    HorizontalOptions="Center" />
 
             <!-- Datum -->
-            <HorizontalStackLayout VerticalOptions="Center" Spacing="10">
-                <Label Text="Datum auswählen:" VerticalOptions="Center" />
-                <DatePicker Date="{Binding SelectedDate}" />
-            </HorizontalStackLayout>
+            <Frame BackgroundColor="#1E1E1E" Padding="15" CornerRadius="10">
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Datum auswählen:"
+                           TextColor="White"
+                           VerticalOptions="Center" />
+                    <DatePicker Date="{Binding SelectedDate}" 
+                                TextColor="White"
+                                Format="d"
+                                BackgroundColor="#1E1E1E" />
+                </HorizontalStackLayout>
+            </Frame>
 
-            <!-- Zwei Spalten: Vor Ort / Home Office -->
-            <Grid ColumnDefinitions="*,1,*" RowDefinitions="Auto" ColumnSpacing="10" Padding="10">
-                <!-- Vor Ort -->
-                <VerticalStackLayout Grid.Column="0" Spacing="10">
-                    <Label Text="VOR ORT" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" />
+            <!-- Von / Bis -->
+            <Frame BackgroundColor="#1E1E1E" Padding="15" CornerRadius="10">
+                <VerticalStackLayout Spacing="15">
 
-                    <Label Text="von:" />
-                    <TimePicker Time="{Binding FromTime}" Format="HH:mm"  />
+                    <Label Text="von:"
+                           TextColor="White"
+                           FontAttributes="Bold" />
+                    <TimePicker Time="{Binding FromTime}"
+                                Format="HH:mm"
+                                TextColor="White"
+                                BackgroundColor="#1E1E1E" />
 
-                    <Label Text="bis:" />
-                    <TimePicker Time="{Binding ToTime}" Format="HH:mm"  />
+                    <Label Text="bis:"
+                           TextColor="White"
+                           FontAttributes="Bold" />
+                    <TimePicker Time="{Binding ToTime}"
+                                Format="HH:mm"
+                                TextColor="White"
+                                BackgroundColor="#1E1E1E" />
 
-
-
-
-                    <Label Text="Pause in Min:" />
-                    <Entry Text="{Binding BreakMinutes}" Placeholder="z. B. 30" />
-
-                    <Button Text="SAVE"
-                            Command="{Binding SaveLocalCommand}"
-                            BackgroundColor="LightGray"
-                            CornerRadius="8" />
                 </VerticalStackLayout>
+            </Frame>
 
-                <!-- Trennlinie -->
-                <BoxView Grid.Column="1"
-                         WidthRequest="1"
-                         Color="Gray"
-                         HorizontalOptions="Center"
-                         VerticalOptions="Fill" />
+            <!-- Save Button -->
+            <Frame BackgroundColor="#1E1E1E" Padding="15" CornerRadius="10">
+                <Button Text="SAVE"
+                        Command="{Binding SaveLocalCommand}"
+                        BackgroundColor="LightGray"
+                        TextColor="Black"
+                        CornerRadius="10"
+                        HorizontalOptions="Fill"
+                        HeightRequest="50"
+                        FontAttributes="Bold" />
+            </Frame>
 
-                <!-- Home Office -->
-                <VerticalStackLayout Grid.Column="2" Spacing="10">
-                    <Label Text="HOME OFFICE" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" />
-
-                    <Label Text="Dauer:" />
-
-                    <HorizontalStackLayout Spacing="10">
-                        <Entry WidthRequest="60"
-           Placeholder="Stunden"
-           Keyboard="Numeric"
-           Text="{Binding DurationHours}" />
-
-                        <Label Text=":" VerticalOptions="Center" />
-
-                        <Entry WidthRequest="60"
-           Placeholder="Minuten"
-           Keyboard="Numeric"
-           Text="{Binding DurationMinutes}" />
-                    </HorizontalStackLayout>
-
-                    <Label Text="Anmerkung:" />
-                    <Entry Text="{Binding Note}" Placeholder="Optional" />
-
-                    <Button Text="SAVE"
-                            Command="{Binding SaveRemoteCommand}"
-                            BackgroundColor="LightGray"
-                            CornerRadius="8" />
-                </VerticalStackLayout>
-            </Grid>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
