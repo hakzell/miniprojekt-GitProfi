@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\smartwork.Core\smartwork.Core.csproj" />
-  </ItemGroup>
-
 </Project>
