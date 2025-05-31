@@ -36,8 +36,8 @@ public partial class ManualViewModel : ObservableObject
             return;
         }
 
-        var entry = new Project(SelectedDate, FromTime, ToTime, description);
-        Entries.Add(entry);
+        var project = new Project(SelectedDate, FromTime, ToTime, description);
+        Entries.Add(project);
 
         // Eingabefelder zurücksetzen (optional)
         SelectedDate = DateTime.Today;
