@@ -12,16 +12,17 @@ public class Erfassung
     public DateTime Date { get; set; }
     public TimeSpan From { get; set; }
     public TimeSpan To { get; set; }
+    public string Description { get; set; }
 
     public Erfassung(DateTime date, TimeSpan from, TimeSpan to)
     {
-        Date = date;
-        From = from;
-        To = to;
+        this.Date = date;
+        this.From = from;
+        this.To = to;
     }
 
     public override string ToString()
     {
-        return $"{Date:dd.MM.yyyy}: {From:hh\\:mm} - {To:hh\\:mm}";
+        return $"{Description} {Date:dd.MM.yyyy}: {From:hh\\:mm} - {To:hh\\:mm}";
     }
 }
