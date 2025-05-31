@@ -11,5 +11,7 @@ namespace smartwork.Data.Services
     public interface IRepository
     {
         List<Project> Get();
+
+        bool Save(Project project);
     }
 }
