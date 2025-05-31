@@ -21,8 +21,7 @@ namespace smartwork
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            builder.Services.AddSingleton<ExportPage>();
-            builder.Services.AddSingleton<ExportViewModel>();
+           
 
             builder.Services.AddSingleton<ManualPage>();
             builder.Services.AddSingleton<ManualViewModel>();

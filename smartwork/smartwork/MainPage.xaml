@@ -1,32 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodels="clr-namespace:smartwork.Core.ViewModels;assembly=smartwork.Core"
-             xmlns:views="clr-namespace:smartwork.Pages"
-             x:Class="smartwork.MainPage">
-    
-    <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,*,Auto">
+             x:Class="smartwork.MainPage"
+             Title="Anzeige der Daten">
 
-        <Label x:Name="TimerLabel"  Grid.ColumnSpan="3" Text="00:00:00" HorizontalTextAlignment="Center" FontSize="Header"></Label>
-        <Button Grid.Row="1" Grid.Column="0"
-        Text="Start/Stop"
-            WidthRequest="200"
-            HeightRequest="200"
-            BackgroundColor="DodgerBlue"
-            TextColor="White"
-            CornerRadius="100"
-             x:Name="StartStopButton"/>
+    <VerticalStackLayout Padding="20" Spacing="20">
 
-        
-        
-        <Grid RowDefinitions="Auto,Auto" Grid.Column="2" Grid.Row="1">
-            <Label Text="Pause in min" FontSize="Medium"/>
-            <Entry Grid.Row="1"/>
-        </Grid>
+        <!-- Datenanzeige -->
+        <Frame BorderColor="LightGray" Padding="10" HeightRequest="400">
+            <ScrollView>
+                <Label Text="{Binding ReportText}"
+                       FontSize="14"
+                       TextColor="Gray" />
+            </ScrollView>
+        </Frame>
 
+        <!-- Export-Button -->
+        <Button Text="Als PDF exportieren"
+                Command="{Binding ExportCommand}"
+                HorizontalOptions="End"
+                WidthRequest="150" />
 
-        <Button Grid.Column="1"  Grid.Row="2" Text="Abschicken" ></Button>
-        
-        
-    </Grid>
+    </VerticalStackLayout>
+
 </ContentPage>

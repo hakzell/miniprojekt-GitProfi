@@ -16,11 +16,7 @@
             Route="MainPage" />
         </Tab>
 
-        <Tab Title="Export">
-            <ShellContent
-                ContentTemplate="{DataTemplate pages:ExportPage}"
-                Route="ExportPage" />
-        </Tab>
+        
 
         <Tab Title="Manual">
             <ShellContent
