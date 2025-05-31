@@ -51,6 +51,21 @@
                 </VerticalStackLayout>
             </Frame>
 
+            <!-- Beschreibung -->
+            <Frame BackgroundColor="#1E1E1E" Padding="15" CornerRadius="10">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Beschreibung:"
+                           TextColor="White"
+                           FontAttributes="Bold" />
+                    <Editor Text="{Binding Description}"
+                            Placeholder="Was wurde gemacht?"
+                            AutoSize="TextChanges"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            HeightRequest="100" />
+                </VerticalStackLayout>
+            </Frame>
+
             <!-- Save Button -->
             <Frame BackgroundColor="#1E1E1E" Padding="15" CornerRadius="10">
                 <Button Text="SAVE"
