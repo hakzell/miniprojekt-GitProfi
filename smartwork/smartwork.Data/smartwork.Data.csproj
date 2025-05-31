@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\smartwork.Core\smartwork.Core.csproj" />
   </ItemGroup>
 
 </Project>

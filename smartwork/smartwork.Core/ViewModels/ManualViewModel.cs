@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using static System.Net.Mime.MediaTypeNames;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
-namespace smartwork.Core.ViewModels;
+namespace smartwork.ViewModels;
 
-public class ManualViewModel
+public partial class ManualViewModel : ObservableObject
 {
-
+ 
 }
