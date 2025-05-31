@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace smartwork.Data.Models;
 
-public class WorkEntry
+public class Erfassung
 {
 
     public DateTime Date { get; set; }
     public TimeSpan From { get; set; }
     public TimeSpan To { get; set; }
 
-    public WorkEntry(DateTime date, TimeSpan from, TimeSpan to)
+    public Erfassung(DateTime date, TimeSpan from, TimeSpan to)
     {
         Date = date;
         From = from;
