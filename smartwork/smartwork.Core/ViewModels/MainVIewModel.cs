@@ -13,5 +13,5 @@ namespace smartwork.Core.ViewModels;
 
 public partial class MainViewModel : ObservableObject
 {
-  
+
 }

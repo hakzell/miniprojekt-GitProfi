@@ -1,8 +1,9 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CommunityToolkit;
+using Microsoft.Extensions.Logging;
 using smartwork.Core.ViewModels;
+using smartwork.Data.Services;
 using smartwork.Pages;
 using Syncfusion.Maui.Core.Hosting;
-using CommunityToolkit;
 using smartwork.ViewModels;
 
 namespace smartwork
@@ -30,6 +31,23 @@ namespace smartwork
             builder.Services.AddSingleton<MainViewModel>();
 
             builder.Services.AddSingleton<MainPage>();
+
+            var path = FileSystem.AppDataDirectory;
+            System.Diagnostics.Debug.WriteLine("Pfad: {0}" + path);
+            string file = Path.Combine(path, "projects.xml");
+
+            if (File.Exists(file))
+            {
+                System.Diagnostics.Debug.WriteLine("File exists");
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("File does not exist");
+            }
+
+
+            builder.Services.AddSingleton<IRepository>(new Repository(file));
+
 
 #if DEBUG
             builder.Logging.AddDebug();
