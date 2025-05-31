@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace smartwork.Data.Models;
 
-public class Erfassung
+public class Project
 {
 
     public DateTime Date { get; set; }
@@ -14,11 +14,12 @@ public class Erfassung
     public TimeSpan To { get; set; }
     public string Description { get; set; }
 
-    public Erfassung(DateTime date, TimeSpan from, TimeSpan to)
+    public Project(DateTime date, TimeSpan from, TimeSpan to, string description)
     {
         this.Date = date;
         this.From = from;
         this.To = to;
+        this.Description = description;
     }
 
     public override string ToString()
