@@ -30,7 +30,8 @@
                     <StackLayout Orientation="Vertical" Margin="10">  
                         <Label Text="{Binding Description}" FontSize="14" TextColor="Gray" />  
                         <Label Text="{Binding Date, StringFormat='Start: {0:d}'}" FontSize="14" />  
-                        <Label Text="{Binding From, StringFormat='End: {0:d}'}" FontSize="14" />  
+                        <Label Text="{Binding From, StringFormat='End: {0:d}'}" FontSize="14" />
+                        <Label Text="{Binding To, StringFormat='End: {0:d}'}" FontSize="14" />
                     </StackLayout>  
                 </DataTemplate>  
             </CollectionView.ItemTemplate>  
