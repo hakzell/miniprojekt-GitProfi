@@ -49,8 +49,8 @@ public partial class ManualViewModel : ObservableObject
             Color.Purple
     };
 
-
-
+    [ObservableProperty]
+    private Color selectedColorPicker = Color.White; // Standardfarbe
 
 
     public ManualViewModel()

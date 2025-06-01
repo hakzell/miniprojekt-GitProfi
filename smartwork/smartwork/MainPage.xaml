@@ -32,7 +32,7 @@
                 <DataTemplate x:DataType="models:Project">
                     <Frame Padding="16"
                            Margin="0,8"
-                           BackgroundColor="LightBlue"
+                           BackgroundColor="LightGrey"
                            CornerRadius="12"
                            HasShadow="True">
                         <VerticalStackLayout Spacing="8">

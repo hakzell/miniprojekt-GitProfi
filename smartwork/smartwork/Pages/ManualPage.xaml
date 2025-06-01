@@ -84,6 +84,19 @@
             </Grid>
 
 
+            <!-- Save Button -->
+            <Frame BackgroundColor="#1E1E1E" Padding="15" CornerRadius="10">
+                <Button Text="SAVE"  
+                        Command="{Binding SaveCommand}" 
+                        BackgroundColor="LightGray"  
+                        TextColor="Black"  
+                        CornerRadius="10"  
+                        HorizontalOptions="Fill"  
+                        HeightRequest="50"  
+                        FontAttributes="Bold" />
+            </Frame>
+
+
         </VerticalStackLayout>  
     </ScrollView>  
 </ContentPage>
