@@ -66,31 +66,23 @@
                             TextColor="Black"  
                             HeightRequest="100" />  
                 </VerticalStackLayout>  
-            </Frame>  
+            </Frame>
 
-            <!-- Save Button -->  
-            <Frame BackgroundColor="#1E1E1E" Padding="15" CornerRadius="10">  
-                <Button Text="SAVE"  
-                        Command="{Binding SaveCommand}"  
-                        BackgroundColor="LightGray"  
-                        TextColor="Black"  
-                        CornerRadius="10"  
-                        HorizontalOptions="Fill"  
-                        HeightRequest="50"  
-                        FontAttributes="Bold" />  
-            </Frame>  
 
-            <!-- SfPicker
-             
-                <picker:SfPicker.HeaderView>  
-                    <picker:PickerHeaderView Text="Wähle ein Farbe" Height="40" />
-                </picker:SfPicker.HeaderView> -->
+            <!-- SfPicker for Colors -->
+            <Grid ColumnDefinitions="300">
             <picker:SfPicker>
-                <picker:SfPicker.Columns>  
-                    <picker:PickerColumn HeaderText="Colors" ItemsSource="{Binding colorPicker}" />  
-                </picker:SfPicker.Columns>  
+                <picker:SfPicker.HeaderView>
+                    <picker:PickerHeaderView Text="Wähle ein Farbe" Height="40"  />
+                </picker:SfPicker.HeaderView>
 
-            </picker:SfPicker>  
+                <picker:SfPicker.Columns>
+                    <picker:PickerColumn HeaderText="Colors" ItemsSource="{Binding colorPicker}" />
+                </picker:SfPicker.Columns>
+
+            </picker:SfPicker>
+            </Grid>
+
 
         </VerticalStackLayout>  
     </ScrollView>  

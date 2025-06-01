@@ -34,6 +34,9 @@ public partial class ManualViewModel : ObservableObject
     [NotifyCanExecuteChangedFor(nameof(SaveCommand))]
     private string description = string.Empty;
 
+    [ObservableProperty]
+    private Color selectedColor;
+
     public ObservableCollection<Project> projects { get; } = new();
 
     public List<Color> colorPicker { get; } = new()
@@ -45,6 +48,9 @@ public partial class ManualViewModel : ObservableObject
             Color.Orange,
             Color.Purple
     };
+
+
+
 
 
     public ManualViewModel()
