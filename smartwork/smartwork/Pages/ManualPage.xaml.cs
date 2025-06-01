@@ -1,13 +1,14 @@
 using smartwork.Core.ViewModels;
+using smartwork.Data.Services;
 using smartwork.ViewModels;
 
 namespace smartwork.Pages;
 
 public partial class ManualPage : ContentPage
 {
-	public ManualPage()
+	public ManualPage(ManualViewModel viewModel)
 	{
 		InitializeComponent();
-		BindingContext = new ManualViewModel();
-	}
+		this.BindingContext = viewModel;
+    }
 }

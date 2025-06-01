@@ -50,7 +50,7 @@ public partial class ManualViewModel : ObservableObject
             return;
         }
 
-        Project project = new Project(this.SelectedDate, this.FromTime, this.ToTime, this.Description);
+        Project project = new Project(this.SelectedDate, this.FromTime, this.ToTime, this.Description); 
 
         var result = _repository.Save(project);
         if (result)
