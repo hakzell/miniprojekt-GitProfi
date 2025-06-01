@@ -1,4 +1,4 @@
-using smartwork.Core.ViewModels;
+using smartwork.ViewModels;
 using smartwork.Data.Services;
 using smartwork.ViewModels;
 
