@@ -56,7 +56,7 @@ public partial class MainViewModel : ObservableObject
             foreach (var project in projects)
             {
                 System.Diagnostics.Debug.WriteLine(project);
-                projects.Add(project);
+                Projects.Add(project);
             }
 
             this.IsLoaded = !this.IsLoaded;
