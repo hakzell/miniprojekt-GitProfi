@@ -83,17 +83,12 @@ public class Repository : IRepository
             XElement? projectElement = _rootElement.Descendants("project")
           .FirstOrDefault(project =>
               (project.Attribute("description")?.Value ?? "") == p.Description &&
-              (project.Attribute("from")?.Value ?? "") == p.From.ToString("o") &&   // ISO 8601
+              (project.Attribute("from")?.Value ?? "") == p.From.ToString("o") &&  
               (project.Attribute("to")?.Value ?? "") == p.To.ToString("o") &&
               (project.Attribute("date")?.Value ?? "") == p.Date.ToString("o")
           );
 
-            //var projects = from project in this._rootElement.Descendants("project")
-            //let date = DateTime.TryParse(project.Attribute("date")?.Value, out var d) ? d : DateTime.MinValue
-                     //  let fromTime = TimeSpan.TryParse(project.Attribute("from")?.Value, out var f) ? f : TimeSpan.Zero
-                     //  let toTime = TimeSpan.TryParse(project.Attribute("to")?.Value, out var t) ? t : TimeSpan.Zero
-                     //  let description = project.Attribute("description")?.Value ?? ""
-                     //  select new Project(date, fromTime, toTime, description);
+            
 
             if (projectElement != null)
             {

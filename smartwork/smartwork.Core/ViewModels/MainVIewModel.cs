@@ -38,7 +38,7 @@ public partial class MainViewModel : ObservableObject
 
             _projects.Add(m.Value);
 
-           
+
 
 
         });
@@ -70,6 +70,7 @@ public partial class MainViewModel : ObservableObject
     }
 
     [RelayCommand]
+
     void Delete()
     {
 
@@ -80,7 +81,7 @@ public partial class MainViewModel : ObservableObject
             if (_repository.Delete(SelectedProject))  // Ruft die Delete methode im Repository auf
             {
                 Projects.Remove(SelectedProject);  // Entferne den Kontakt aus der Oberfläche
-                
+
             }
 
             SelectedProject = null; // Es ist nichts´mehr ausgewählt
