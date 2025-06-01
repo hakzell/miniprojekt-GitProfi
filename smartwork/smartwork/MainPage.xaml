@@ -1,41 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"  
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:smartwork.ViewModels;assembly=smartwork.Core"
              xmlns:models="clr-namespace:smartwork.Data.Models;assembly=smartwork.Data"
-             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"  
-             x:DataType="viewmodels:MainViewModel"  
-             x:Class="smartwork.MainPage"  
-             Title="Projekte">  
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:DataType="viewmodels:MainViewModel"
+             x:Class="smartwork.MainPage"
+             Title="Projekte"
+             BackgroundColor="#F5F5F5">
 
-    <ContentPage.Behaviors>  
-        <toolkit:EventToCommandBehavior  
-                EventName="Appearing"  
-                Command="{Binding LoadCommand}"/>  
-    </ContentPage.Behaviors>  
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior
+            EventName="Appearing"
+            Command="{Binding LoadCommand}" />
+    </ContentPage.Behaviors>
 
-    <ContentPage.Resources>  
-        <ResourceDictionary>  
-            <toolkit:BoolToObjectConverter x:Key="ShowPanelConverter"   
-                TrueObject="1"   
-                FalseObject="2"/>  
-            <toolkit:IsStringNotNullOrEmptyConverter x:Key="IsStringNotNullOrEmptyConverter" />  
-        </ResourceDictionary>  
-    </ContentPage.Resources>  
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <toolkit:BoolToObjectConverter x:Key="ShowPanelConverter" 
+                                           TrueObject="1"
+                                           FalseObject="2" />
+            <toolkit:IsStringNotNullOrEmptyConverter x:Key="IsStringNotNullOrEmptyConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-    <Grid ColumnDefinitions="*, Auto">  
-        <CollectionView SelectionMode="Single" Grid.Row="1" Margin="10" ItemsSource="{Binding Projects}">  
-            <CollectionView.ItemTemplate>  
-                <DataTemplate x:DataType="models:Project">  <!--Hier wird beim Datatemplate das model Project aufgerufen, damit es weiß, dass man sich auf Project bezieht-->
-                    <StackLayout Orientation="Vertical" Margin="10">  
-                        <Label Text="{Binding Description}" FontSize="14" TextColor="Gray" />  
-                        <Label Text="{Binding Date, StringFormat='Start: {0:d}'}" FontSize="14" />  
-                        <Label Text="{Binding From, StringFormat='End: {0:d}'}" FontSize="14" />
-                        <Label Text="{Binding To, StringFormat='End: {0:d}'}" FontSize="14" />
-                    </StackLayout>  
-                </DataTemplate>  
-            </CollectionView.ItemTemplate>  
-        </CollectionView>  
-    </Grid>  
+    <ScrollView>
+        <CollectionView SelectionMode="Single"
+                        Margin="16"
+                        ItemsSource="{Binding Projects}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Project">
+                    <Frame Padding="16"
+                           Margin="0,8"
+                           BackgroundColor="White"
+                           CornerRadius="12"
+                           HasShadow="True">
+                        <VerticalStackLayout Spacing="8">
+                            <Label Text="{Binding Description}"
+                                   FontAttributes="Bold"
+                                   FontSize="18"
+                                   TextColor="#333" />
+                            <Label Text="{Binding Date, StringFormat='Startdatum: {0:dd.MM.yyyy}'}"
+                                   FontSize="14"
+                                   TextColor="#666" />
+                            <Label Text="{Binding From, StringFormat='Enddatum: {0:dd.MM.yyyy}'}"
+                                   FontSize="14"
+                                   TextColor="#666" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ScrollView>
 
 </ContentPage>
