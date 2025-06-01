@@ -1,26 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="smartwork.MainPage"
-             Title="Anzeige der Daten">
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"  
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"  
+             xmlns:local="clr-namespace:smartwork"  
+             x:Class="smartwork.MainPage"  
+             Title="Anzeige der Daten">  
 
-    <VerticalStackLayout Padding="20" Spacing="20">
+    <ContentPage.Behaviors>  
+        <toolkit:EventToCommandBehavior  
+                EventName="Appearing"  
+                Command="{Binding LoadCommand}"/>  
+    </ContentPage.Behaviors>  
 
-        <!-- Datenanzeige -->
-        <Frame BorderColor="LightGray" Padding="10" HeightRequest="400">
-            <ScrollView>
-                <Label Text="{Binding ReportText}"
-                       FontSize="14"
-                       TextColor="Gray" />
-            </ScrollView>
-        </Frame>
-
-        <!-- Export-Button -->
-        <Button Text="Als PDF exportieren"
-                Command="{Binding ExportCommand}"
-                HorizontalOptions="End"
-                WidthRequest="150" />
-
-    </VerticalStackLayout>
-
+    <ContentPage.Resources>  
+        <ResourceDictionary>  
+            <toolkit:BoolToObjectConverter x:Key="ShowPanelConverter"   
+                TrueObject="1"   
+                FalseObject="2"/>  
+            <toolkit:IsStringNotNullOrEmptyConverter x:Key="IsStringNotNullOrEmptyConverter" />  
+        </ResourceDictionary>  
+    </ContentPage.Resources>  
+ 
 </ContentPage>

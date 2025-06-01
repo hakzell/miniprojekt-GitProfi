@@ -1,10 +1,11 @@
 ﻿using CommunityToolkit;
+using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
 using smartwork.Core.ViewModels;
 using smartwork.Data.Services;
 using smartwork.Pages;
-using Syncfusion.Maui.Core.Hosting;
 using smartwork.ViewModels;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace smartwork
 {
@@ -17,6 +18,7 @@ namespace smartwork
                    .UseMauiApp<App>()
                    .ConfigureSyncfusionCore()
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
