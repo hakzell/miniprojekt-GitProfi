@@ -7,7 +7,7 @@
              x:DataType="viewmodels:MainViewModel"
              x:Class="smartwork.MainPage"
              Title="Projekte"
-             BackgroundColor="#F5F5F5">
+             >
 
     <ContentPage.Behaviors>
         <toolkit:EventToCommandBehavior
@@ -32,7 +32,7 @@
                 <DataTemplate x:DataType="models:Project">
                     <Frame Padding="16"
                            Margin="0,8"
-                           BackgroundColor="White"
+                           BackgroundColor="LightBlue"
                            CornerRadius="12"
                            HasShadow="True">
                         <VerticalStackLayout Spacing="8">
@@ -43,7 +43,10 @@
                             <Label Text="{Binding Date, StringFormat='Startdatum: {0:dd.MM.yyyy}'}"
                                    FontSize="14"
                                    TextColor="#666" />
-                            <Label Text="{Binding From, StringFormat='Enddatum: {0:dd.MM.yyyy}'}"
+                            <Label Text="{Binding From, StringFormat='Von: {0}'}"
+                                   FontSize="14"
+                                   TextColor="#666" />
+                            <Label Text="{Binding To, StringFormat='Bis: {0}'}"
                                    FontSize="14"
                                    TextColor="#666" />
                         </VerticalStackLayout>
