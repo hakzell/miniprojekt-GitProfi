@@ -26,11 +26,11 @@
     <Grid ColumnDefinitions="*, Auto">  
         <CollectionView SelectionMode="Single" Grid.Row="1" Margin="10" ItemsSource="{Binding Projects}">  
             <CollectionView.ItemTemplate>  
-                <DataTemplate>  
+                <DataTemplate x:DataType="models:Project">  <!--Hier wird beim Datatemplate das model Project aufgerufen, damit es weiß, dass man sich auf Project bezieht-->
                     <StackLayout Orientation="Vertical" Margin="10">  
-                        <Label Text="{Binding description}" FontSize="14" TextColor="Gray" />  
-                        <Label Text="{Binding StartDate, StringFormat='Start: {0:d}'}" FontSize="14" />  
-                        <Label Text="{Binding EndDate, StringFormat='End: {0:d}'}" FontSize="14" />  
+                        <Label Text="{Binding Description}" FontSize="14" TextColor="Gray" />  
+                        <Label Text="{Binding Date, StringFormat='Start: {0:d}'}" FontSize="14" />  
+                        <Label Text="{Binding From, StringFormat='End: {0:d}'}" FontSize="14" />  
                     </StackLayout>  
                 </DataTemplate>  
             </CollectionView.ItemTemplate>  
