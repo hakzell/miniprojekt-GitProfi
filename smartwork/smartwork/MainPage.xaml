@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"  
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             xmlns:viewmodels="clr-namespace:smartwork.ViewModels;assembly=smartwork.Core"
+             xmlns:models="clr-namespace:smartwork.Data.Models;assembly=smartwork.Data"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"  
-             xmlns:local="clr-namespace:smartwork"  
+             x:DataType="viewmodels:MainViewModel"  
              x:Class="smartwork.MainPage"  
-             Title="Anzeige der Daten">  
+             Title="Projekte">  
 
     <ContentPage.Behaviors>  
         <toolkit:EventToCommandBehavior  
@@ -20,5 +22,19 @@
             <toolkit:IsStringNotNullOrEmptyConverter x:Key="IsStringNotNullOrEmptyConverter" />  
         </ResourceDictionary>  
     </ContentPage.Resources>  
- 
+
+    <Grid ColumnDefinitions="*, Auto">  
+        <CollectionView SelectionMode="Single" Grid.Row="1" Margin="10" ItemsSource="{Binding Projects}">  
+            <CollectionView.ItemTemplate>  
+                <DataTemplate>  
+                    <StackLayout Orientation="Vertical" Margin="10">  
+                        <Label Text="{Binding description}" FontSize="14" TextColor="Gray" />  
+                        <Label Text="{Binding StartDate, StringFormat='Start: {0:d}'}" FontSize="14" />  
+                        <Label Text="{Binding EndDate, StringFormat='End: {0:d}'}" FontSize="14" />  
+                    </StackLayout>  
+                </DataTemplate>  
+            </CollectionView.ItemTemplate>  
+        </CollectionView>  
+    </Grid>  
+
 </ContentPage>

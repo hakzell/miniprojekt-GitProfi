@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using System.Timers;
 
 
-namespace smartwork.Core.ViewModels;
+namespace smartwork.ViewModels;
 
 public partial class MainViewModel : ObservableObject
 {
@@ -36,7 +36,7 @@ public partial class MainViewModel : ObservableObject
             System.Diagnostics.Debug.WriteLine(r);
             System.Diagnostics.Debug.WriteLine(m.Value);
 
-            _project.Add(m.Value);
+            _projects.Add(m.Value);
 
            
 
@@ -44,7 +44,7 @@ public partial class MainViewModel : ObservableObject
         });
     }
     [ObservableProperty]
-    ObservableCollection<Project> _project = new ObservableCollection<Project>();
+    ObservableCollection<Project> _projects = new ObservableCollection<Project>();
 
     [RelayCommand]
     void Load()

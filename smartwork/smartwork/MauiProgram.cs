@@ -1,10 +1,9 @@
 ﻿using CommunityToolkit;
 using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
-using smartwork.Core.ViewModels;
+using smartwork.ViewModels;
 using smartwork.Data.Services;
 using smartwork.Pages;
-using smartwork.ViewModels;
 using Syncfusion.Maui.Core.Hosting;
 
 namespace smartwork
@@ -30,9 +29,8 @@ namespace smartwork
             builder.Services.AddSingleton<ManualPage>();
             builder.Services.AddSingleton <ManualViewModel>();
 
-            builder.Services.AddSingleton<MainViewModel>();
-
             builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<MainViewModel>();
 
             var path = FileSystem.AppDataDirectory;
             System.Diagnostics.Debug.WriteLine("Pfad: {0}" + path);

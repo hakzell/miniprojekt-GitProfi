@@ -6,12 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace smartwork.Data.Services
-{
-    public interface IRepository
-    {
-        List<Project> Get();
+namespace smartwork.Data.Services;
 
-        bool Save(Project project);
-    }
+public interface IRepository
+{
+    List<Project> Get();
+
+    bool Save(Project project);
 }

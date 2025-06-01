@@ -1,4 +1,4 @@
-﻿using smartwork.Core.ViewModels;
+﻿using smartwork.ViewModels;
 
 namespace smartwork
 {
