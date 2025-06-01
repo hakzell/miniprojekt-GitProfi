@@ -70,7 +70,6 @@ public partial class MainViewModel : ObservableObject
     }
 
     [RelayCommand]
-
     void Delete()
     {
 

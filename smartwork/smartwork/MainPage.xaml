@@ -27,7 +27,7 @@
     <ScrollView>
         <CollectionView SelectionMode="Single"
                         Margin="16"
-                        ItemsSource="{Binding Projects}">
+                        ItemsSource="{Binding Projects}" SelectedItem="SelectedProject">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Project">
                     <Frame Padding="16"
