@@ -5,6 +5,7 @@ using smartwork.Core.Messages;
 using smartwork.Data.Models;
 using smartwork.Data.Services;
 using System.Collections.ObjectModel;
+using System.Drawing;
 
 namespace smartwork.ViewModels;
 
@@ -33,7 +34,18 @@ public partial class ManualViewModel : ObservableObject
     [NotifyCanExecuteChangedFor(nameof(SaveCommand))]
     private string description = string.Empty;
 
-    public ObservableCollection<Project> projects { get; } = new(); 
+    public ObservableCollection<Project> projects { get; } = new();
+
+    public List<Color> colorPicker { get; } = new()
+    {
+            Color.Red,
+            Color.Green,
+            Color.Blue,
+            Color.Yellow,
+            Color.Orange,
+            Color.Purple
+    };
+
 
     public ManualViewModel()
     {

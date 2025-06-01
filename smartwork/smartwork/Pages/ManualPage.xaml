@@ -1,84 +1,97 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="smartwork.Pages.ManualPage"
-             Title="Manuelle Zeiteingabe">
-   
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"  
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"    
+             xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"
+             xmlns:sf="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             x:Class="smartwork.Pages.ManualPage"  
+             Title="Manuelle Zeiteingabe">  
 
-    <ScrollView>
-        <VerticalStackLayout Padding="30" Spacing="30"
-                             HorizontalOptions="Center"
-                             VerticalOptions="Center">
+    <ScrollView>  
+        <VerticalStackLayout Padding="30" Spacing="30"  
+                             HorizontalOptions="Center"  
+                             VerticalOptions="Center">  
 
-            <!-- Titel -->
-            <Label Text="Zeiteingabe"
-                   FontSize="28"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center" />
+            <!-- Titel -->  
+            <Label Text="Zeiteingabe"  
+                   FontSize="28"  
+                   FontAttributes="Bold"  
+                   HorizontalOptions="Center" />  
 
-            <!-- Datum -->
-            <Frame BackgroundColor="#1E1E1E" Padding="15" CornerRadius="10">
-                <HorizontalStackLayout Spacing="10">
-                    <Label Text="Datum auswählen:"
-                           TextColor="White"
-                           VerticalOptions="Center" />
-                    <DatePicker Date="{Binding SelectedDate}" 
-                                TextColor="White"
-                                Format="d"
-                                BackgroundColor="#1E1E1E" />
-                </HorizontalStackLayout>
-            </Frame>
+            <!-- Datum -->  
+            <Frame BackgroundColor="#1E1E1E" Padding="15" CornerRadius="10">  
+                <HorizontalStackLayout Spacing="10">  
+                    <Label Text="Datum auswählen:"  
+                           TextColor="White"  
+                           VerticalOptions="Center" />  
+                    <DatePicker Date="{Binding SelectedDate}"   
+                                TextColor="White"  
+                                Format="d"  
+                                BackgroundColor="#1E1E1E" />  
+                </HorizontalStackLayout>  
+            </Frame>  
 
-            <!-- Von / Bis -->
-            <Frame BackgroundColor="#1E1E1E" Padding="15" CornerRadius="10">
-                <VerticalStackLayout Spacing="15">
+            <!-- Von / Bis -->  
+            <Frame BackgroundColor="#1E1E1E" Padding="15" CornerRadius="10">  
+                <VerticalStackLayout Spacing="15">  
 
-                    <Label Text="von:"
-                           TextColor="White"
-                           FontAttributes="Bold" />
-                    <TimePicker Time="{Binding FromTime}"
-                                Format="HH:mm"
-                                TextColor="White"
-                                BackgroundColor="#1E1E1E" />
+                    <Label Text="von:"  
+                           TextColor="White"  
+                           FontAttributes="Bold" />  
+                    <TimePicker Time="{Binding FromTime}"  
+                                Format="HH:mm"  
+                                TextColor="White"  
+                                BackgroundColor="#1E1E1E" />  
 
-                    <Label Text="bis:"
-                           TextColor="White"
-                           FontAttributes="Bold" />
-                    <TimePicker Time="{Binding ToTime}"
-                                Format="HH:mm"
-                                TextColor="White"
-                                BackgroundColor="#1E1E1E" />
+                    <Label Text="bis:"  
+                           TextColor="White"  
+                           FontAttributes="Bold" />  
+                    <TimePicker Time="{Binding ToTime}"  
+                                Format="HH:mm"  
+                                TextColor="White"  
+                                BackgroundColor="#1E1E1E" />  
 
-                </VerticalStackLayout>
-            </Frame>
+                </VerticalStackLayout>  
+            </Frame>  
 
-            <!-- Beschreibung -->
-            <Frame BackgroundColor="#1E1E1E" Padding="15" CornerRadius="10">
-                <VerticalStackLayout Spacing="10">
-                    <Label Text="Beschreibung:"
-                           TextColor="White"
-                           FontAttributes="Bold" />
-                    <Editor Text="{Binding Description}"
-                            Placeholder="Was wurde gemacht?"
-                            AutoSize="TextChanges"
-                            BackgroundColor="White"
-                            TextColor="Black"
-                            HeightRequest="100" />
-                </VerticalStackLayout>
-            </Frame>
+            <!-- Beschreibung -->  
+            <Frame BackgroundColor="#1E1E1E" Padding="15" CornerRadius="10">  
+                <VerticalStackLayout Spacing="10">  
+                    <Label Text="Beschreibung:"  
+                           TextColor="White"  
+                           FontAttributes="Bold" />  
+                    <Editor Text="{Binding Description}"  
+                            Placeholder="Was wurde gemacht?"  
+                            AutoSize="TextChanges"  
+                            BackgroundColor="White"  
+                            TextColor="Black"  
+                            HeightRequest="100" />  
+                </VerticalStackLayout>  
+            </Frame>  
 
-            <!-- Save Button -->
-            <Frame BackgroundColor="#1E1E1E" Padding="15" CornerRadius="10">
-                <Button Text="SAVE"
-                        Command="{Binding SaveCommand}"
-                        BackgroundColor="LightGray"
-                        TextColor="Black"
-                        CornerRadius="10"
-                        HorizontalOptions="Fill"
-                        HeightRequest="50"
-                        FontAttributes="Bold" />
-            </Frame>
+            <!-- Save Button -->  
+            <Frame BackgroundColor="#1E1E1E" Padding="15" CornerRadius="10">  
+                <Button Text="SAVE"  
+                        Command="{Binding SaveCommand}"  
+                        BackgroundColor="LightGray"  
+                        TextColor="Black"  
+                        CornerRadius="10"  
+                        HorizontalOptions="Fill"  
+                        HeightRequest="50"  
+                        FontAttributes="Bold" />  
+            </Frame>  
 
-        </VerticalStackLayout>
-    </ScrollView>
+            <!-- SfPicker
+             
+                <picker:SfPicker.HeaderView>  
+                    <picker:PickerHeaderView Text="Wähle ein Farbe" Height="40" />
+                </picker:SfPicker.HeaderView> -->
+            <picker:SfPicker>
+                <picker:SfPicker.Columns>  
+                    <picker:PickerColumn HeaderText="Colors" ItemsSource="{Binding colorPicker}" />  
+                </picker:SfPicker.Columns>  
+
+            </picker:SfPicker>  
+
+        </VerticalStackLayout>  
+    </ScrollView>  
 </ContentPage>

@@ -1,6 +1,5 @@
 using smartwork.ViewModels;
 using smartwork.Data.Services;
-using smartwork.ViewModels;
 
 namespace smartwork.Pages;
 
