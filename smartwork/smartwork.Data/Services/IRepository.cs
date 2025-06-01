@@ -12,5 +12,6 @@ public interface IRepository
 {
     List<Project> Get();
 
+    bool Delete(Project p); // löschen
     bool Save(Project project);
 }

@@ -75,5 +75,40 @@ public class Repository : IRepository
             return false;
         }
     }
+    public bool Delete(Project p)
+    {
+        try
+        {
+
+            XElement? projectElement = _rootElement.Descendants("project")
+          .FirstOrDefault(project =>
+              (project.Attribute("description")?.Value ?? "") == p.Description &&
+              (project.Attribute("from")?.Value ?? "") == p.From.ToString("o") &&  
+              (project.Attribute("to")?.Value ?? "") == p.To.ToString("o") &&
+              (project.Attribute("date")?.Value ?? "") == p.Date.ToString("o")
+          );
+
+            
+
+            if (projectElement != null)
+            {
+                projectElement.Remove();
+                _rootElement.Save(_file);                                             // xml wird gespeichert 
+                return true;                                                          // löschen hat funktioniert 
+            }
+
+            return false;
+
+
+        }
+        catch (Exception e)                                                           // wenn ein fehler beim löschen auftritt 
+        {
+            System.Diagnostics.Debug.WriteLine(e.Message);
+            return false;                                                             // löschen war nicht erfolgreich
+        }
+
+
+
+    }
 
 }

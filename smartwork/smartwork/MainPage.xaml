@@ -49,6 +49,12 @@
                             <Label Text="{Binding To, StringFormat='Bis: {0}'}"
                                    FontSize="14"
                                    TextColor="#666" />
+                            <!-- Mülleimer -->
+                            <Image Grid.Column="1" HeightRequest="20" Source="trash.png" >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:MainViewModel}}, Path=DeleteCommand}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
                         </VerticalStackLayout>
                     </Frame>
                 </DataTemplate>
